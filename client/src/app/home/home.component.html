@@ -1,0 +1,8 @@
+<div class="container" style="text-align: center;">
+    @if(!registerMode){
+        <h1>Buy used cars here</h1>
+        <button (click)="registerToggle()" class="btn btn-primary btn-lg">Register</button>
+    }@else {
+        <app-register [usersFromHomeComponent]="users" (cancelRegister)="cancelRegisterMode($event)"></app-register>
+    }
+</div>

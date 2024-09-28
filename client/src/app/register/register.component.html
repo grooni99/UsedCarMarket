@@ -1,0 +1,20 @@
+<div class="container" style="width: 30em">
+    <form #registerForm="ngForm" (ngSubmit)="register()" role="search">
+            <input name = "username" [(ngModel)]="model.username" class="form-control me-2" placeholder="Username">
+
+            <div class="mb-3">
+                <label>Who is your favorite User</label>
+                <select class="form-select">
+                    @for (user of usersFromHomeComponent(); track $index) {
+                        <option [value]="user.userName">
+                            {{user.userName}}
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <input name = "password" [(ngModel)]="model.password" class ="form-control me-2" placeholder="Password" type = "password">
+        <button class="btn btn-outline-success" type="submit">Register</button>
+        <button (click)="cancel()" class="btn btn-outline-success" type="submit">Cancel</button>
+    </form>
+</div>
